@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "search-engine-api"
+version = "0.1.0"
+description = "A Public API for the search-engine-library"
+authors = ["Manasseh Mmadu <mmadumanasseh@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+fastapi = {version = "^0.44.0", extras = ["all"]}
+search-engine-parser = "^0.5.3"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.4"
+pytest = "^5.3"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
