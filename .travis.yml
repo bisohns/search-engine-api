@@ -1,17 +1,15 @@
 sudo: false
 language: python
 
-cache:
-  directories:
-    - $HOME/.cache/pip
-
 python:
   - "3.6"
 
+before_install:
+- pip install poetry
 
 install:
-  - pip install -r requirements-dev.txt
+  - poetry install 
 
 
 script: 
-  - pytest
+  - poetry run pytest
