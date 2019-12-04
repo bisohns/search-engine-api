@@ -29,22 +29,18 @@ View all [supported engines](https://github.com/bisoncorps/search-engine-parser/
 
 ## Installation
 
-### Poetry
+### [Poetry](https://github.com/sdispater/poetry)
 ```bash
     # install only package dependencies
     poetry install
     # Installs `pysearch` cli  tool
-    uvicorn main:app --reload
+    poetry run uvicorn main:app --reload
 ```
+App is available on http://127.0.0.1:8000/. An Interactive Documentation of API is also available on http://127.0.0.1/docs
 
 ## Running the tests
 
 ```bash
-    pytest
+    poetry run pytest
 ```
 
-## Usage
-When the server is started, the Swagger UI is available at http://localhost:8000/swagger for testing
-
-
-![Demo](assets/swagger-ui.png)
