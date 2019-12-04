@@ -14,8 +14,11 @@ async def root():
 async def query(query: str, engine: str = "google", page: int = 1, limit: int = 10):
     try:
         _engine = ENGINE_DICT[engine]()
+        results = await _engine.async_search(query, page)
     except KeyError:
         raise HTTPException(status_code=404, detail="Specified Engine Does not Exist")
-    results = await _engine.async_search(query, page)
+    except NoResultsOrTrafficError:
+        raise HTTPException(status_code=404, detail=f"Cannot contact the {engine.upper()} server, try again")
+
     return results
 

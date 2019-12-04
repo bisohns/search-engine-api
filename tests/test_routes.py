@@ -17,5 +17,5 @@ def test_query_fail_without_engine():
 
 def test_query_fail_without_engine():
     for engine in ENGINE_DICT.keys():
-        response = client.get(f"/search/?engine={engine}&&query=\"Who am I\"")
-        assert response.status_code == 200
+        response = client.get(f"/search/?engine={engine}&query=\"Who am I\"")
+        assert response.status_code in 200
