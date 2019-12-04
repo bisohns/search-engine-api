@@ -44,3 +44,13 @@ App is available on http://127.0.0.1:8000/. An Interactive Documentation of API 
     poetry run pytest
 ```
 
+## Usage
+### Curl
+```bash
+curl -X GET "http://localhost:8000/search/?query=Preaching%20the%20Choir&engine=google&page=1" -H  "accept: application/json"
+```
+All Parameters that can be passed to the `search` command of the [search-engine-parser](https://github.com/bisoncorps/search-engine-parser#command-line) can be as get paramters
+#### Parameter
+- **engine**: (Optional: True, default=google). The search engine to use for querying. The full list can be found [supported engines](https://github.com/bisoncorps/search-engine-parser/blob/master/docs/supported\_engines.md)
+- **query**: The query string to search
+- **page**: default=1. The page number to return in the results

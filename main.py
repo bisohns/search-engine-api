@@ -11,7 +11,7 @@ async def root():
 
 
 @app.get("/search/")
-async def query(query: str, engine: str = "google", page: int = 1, limit: int = 10):
+async def query(query: str, engine: str = "google", page: int = 1):
     try:
         _engine = ENGINE_DICT[engine]()
         results = await _engine.async_search(query, page)
